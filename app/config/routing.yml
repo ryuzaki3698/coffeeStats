@@ -1,0 +1,3 @@
+coffee_stats:
+    prefix: /
+    resource: "@CoffeeStatsBundle/Resources/config/routing.yml"
