@@ -1,6 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: @CoffeeStatsBundle/Resources/config/services.yml }
 
 framework:
     #esi:             ~
@@ -72,3 +73,6 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: CoffeeStats\Bundle\CoffeeStatsBundle\Entity\User
+    registration:
+        form:
+            type: coffee_user_registration
