@@ -1,6 +1,42 @@
 {% extends "::base.html.twig" %}
 
+{% block javascripts %}
+
+    {{ parent() }}
+    <script type="text/javascript" src="{{ asset('bundles/coffeestats/js/jquery.js') }}"></script>
+
+{% endblock %}
+    
+{% block stylesheets %}
+    <link href="{{ asset('bundles/coffeestats/css/dashboard.css') }}" media="screen" rel="stylesheet">
+{% endblock %}
+
 {% block body %}
+    
+    <header>
+        <h1>Dashboard</h1>{% block dashboard_title %}{% endblock %}
+        <nav>
+            <a href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+            
+            <div>
+                {% if app.user.needCoffee %}
+                <p>Stock de café faible <a target="_blank" href="http://www.chacunsoncafe.fr/">Acheter du café</a></p>
+                {% endif %}
+                <form method="POST" action="{{ path('coffee_stats_add_coffee_stock') }}">
+                    <p>J'ai ajouté : {{ form_widget(form_add_coffee_stock.stock) }} grammes de café</p>
+                    {{ form_widget(form_add_coffee_stock._token) }}
+                    <p><input type="submit" value="Valider"></p>
+                </form>
+            </div>
+            
+            {% if app.user.needCleanup %}
+            <div>
+                <p>Nettoyage de la machine nécessaire</p>
+                <div>La machine a été nettoyé</div>
+            </div>
+            {% endif %}
+        </nav>
+    </header>
 
     {% block content %}
 

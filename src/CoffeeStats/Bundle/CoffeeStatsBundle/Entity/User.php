@@ -34,6 +34,21 @@ class User extends BaseUser
      */
     private $firstname;
     
+    /**
+     * @ORM\Column(name="needCoffee", type="boolean")
+     */
+    private $needCoffee = false;
+    
+    /**
+     * @ORM\Column(name="needCleanup", type="boolean")
+     */
+    private $needCleanup = false;
+    
+    /**
+     * @ORM\Column(name="stockCoffee", type="string", options="{default:'0'}")
+     */
+    private $stockCoffee = "0";
+    
 
     public function __construct()
     {
@@ -123,5 +138,74 @@ class User extends BaseUser
     public function setEmail($email){
         parent::setEmail($email);
         parent::setUsername($email);
+    }
+
+    /**
+     * Set needCoffee
+     *
+     * @param boolean $needCoffee
+     * @return User
+     */
+    public function setNeedCoffee($needCoffee)
+    {
+        $this->needCoffee = $needCoffee;
+
+        return $this;
+    }
+
+    /**
+     * Get needCoffee
+     *
+     * @return boolean 
+     */
+    public function getNeedCoffee()
+    {
+        return $this->needCoffee;
+    }
+
+    /**
+     * Set needCleanup
+     *
+     * @param boolean $needCleanup
+     * @return User
+     */
+    public function setNeedCleanup($needCleanup)
+    {
+        $this->needCleanup = $needCleanup;
+
+        return $this;
+    }
+
+    /**
+     * Get needCleanup
+     *
+     * @return boolean 
+     */
+    public function getNeedCleanup()
+    {
+        return $this->needCleanup;
+    }
+
+    /**
+     * Set stockCoffee
+     *
+     * @param string $stockCoffee
+     * @return User
+     */
+    public function setStockCoffee($stockCoffee)
+    {
+        $this->stockCoffee = $stockCoffee;
+
+        return $this;
+    }
+
+    /**
+     * Get stockCoffee
+     *
+     * @return string 
+     */
+    public function getStockCoffee()
+    {
+        return $this->stockCoffee;
     }
 }

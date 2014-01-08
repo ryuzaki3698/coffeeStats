@@ -5,3 +5,9 @@ coffee_stats_homepage:
 coffee_stats_tests_data:
     pattern:  /test_data
     defaults: { _controller: CoffeeStatsBundle:Test:data }
+
+coffee_stats_add_coffee_stock:
+    pattern: /coffee/add
+    defaults: {_controller: CoffeeStatsBundle:Coffee:add}
+    requirements:
+        _method:  POST
