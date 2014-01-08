@@ -13,7 +13,7 @@ class DefaultController extends Controller
         
         $coffeeLib = new CoffeeDataLib($user->getIp());
         
-        $coffeeLib = new 
+       // $coffeeLib = new 
         
         return $this->render('CoffeeStatsBundle:Default:dashboard.html.twig');
     }
