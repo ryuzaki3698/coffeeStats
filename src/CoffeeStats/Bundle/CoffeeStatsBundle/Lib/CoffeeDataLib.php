@@ -23,6 +23,14 @@ class CoffeeDataLib {
         return $data;
     }
 
+    public function remoteFileExists() {
+        
+        if (!is_file($url)) {
+            false;
+        }
+        return $data;
+    }
+
     private function get($index) {
 
         $data = $this->getFile();
@@ -43,7 +51,7 @@ class CoffeeDataLib {
     public function GetRistrito() {
         return $this->get(6);
     }
-
+....
     public function GetThe() {
         return $this->get(8);
     }
