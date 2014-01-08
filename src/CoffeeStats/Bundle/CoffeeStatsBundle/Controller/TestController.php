@@ -8,9 +8,11 @@ use CoffeeStats\Bundle\CoffeeStatsBundle\Lib\CoffeeDataLib;
 class TestController extends Controller {
 
     public function dataAction() {
-        $coffee = new CoffeeDataLib();
+        $coffee = new CoffeeDataLib('10.102.187.190');
 
-        $data = $coffee->getFile();
+        $data = $coffee->RemoteFileExists();
+
+        var_dump($data);
         die($data);
     }
 
