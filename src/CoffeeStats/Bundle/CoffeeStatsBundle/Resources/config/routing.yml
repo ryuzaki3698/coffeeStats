@@ -1,3 +1,7 @@
 coffee_stats_homepage:
     pattern:  /
     defaults: { _controller: CoffeeStatsBundle:Default:dashboard }
+
+coffee_stats_tests_data:
+    pattern:  /test_data
+    defaults: { _controller: CoffeeStatsBundle:Test:data }
